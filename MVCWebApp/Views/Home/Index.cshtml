@@ -1,0 +1,49 @@
+﻿@using AzureStorageLibrary.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Players</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>RowKey</th>
+        <th>PartitionKey</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>BirthDate</th>
+        <th>Salary</th>
+        <th>Score</th>
+        <th>TimeStamp</th>
+    </tr>
+
+    @foreach (var item in ViewBag.players as List<Player>)
+    {
+        <tr>
+            <td>
+                @item.RowKey
+            </td>
+            <td>
+                @item.PartitionKey
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Surname
+            </td>
+            <td>
+                @item.BirthDate
+            </td>
+            <td>
+                @item.Salary
+            </td>
+            <td>
+                @item.Score
+            </td>
+            <td>
+                @item.Timestamp
+            </td>
+        </tr>
+    }
+</table>
